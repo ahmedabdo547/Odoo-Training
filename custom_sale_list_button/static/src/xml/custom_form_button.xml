@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+   <t t-name="custom_sale_list_button.FormView.Buttons" t-inherit="web.FormView">
+       <xpath expr="//t[@t-set-slot='layout-buttons']" position="inside">
+            <button type="button" class="btn btn-primary" style="margin-left: 10px;" t-on-click="onCustomClick">
+                Custom Btn
+            </button>
+       </xpath>
+   </t>
+</templates>

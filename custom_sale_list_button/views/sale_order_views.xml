@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_quotation_tree_custom" model="ir.ui.view">
+        <field name="name">sale.quotation.tree.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="js_class">custom_sale_list_button</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!-- New: Kanban View Inheritance -->
+    <record id="view_sale_order_kanban_custom" model="ir.ui.view">
+        <field name="name">sale.order.kanban.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="js_class">custom_sale_kanban_button</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!-- New: Form View Inheritance -->
+    <record id="view_sale_order_form_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="js_class">custom_sale_form_button</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

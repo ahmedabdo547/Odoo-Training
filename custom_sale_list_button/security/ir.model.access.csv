@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_sale_list_button_user,access.custom.sale.list.button.user,model_custom_sale_list_button,base.group_user,1,1,1,1
