@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="itl_phone.ItlPhoneField" t-inherit="web.FormPhoneField" owl="1">
+     <xpath expr="//input" position="after">
+           <button class="btn btn-secondary d-flex align-items-center btn-sm"
+                   t-on-click="validate"><i class="fa fa-check"/>check</button>
+        </xpath>
+    </t>
+</templates>
