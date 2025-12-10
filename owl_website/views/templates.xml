@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_owl_page" name="Custom Owl Page">
+        <t t-call="website.layout">
+            <div>
+                <h1>Hello World</h1>
+                <owl-component name="owl_website.PartnerTemplate"/>
+                <h2>hi</h2>
+            </div>
+        </t>
+    </template>
+</odoo>
