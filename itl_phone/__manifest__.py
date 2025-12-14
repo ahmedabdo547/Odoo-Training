@@ -9,7 +9,7 @@
     'category': 'Uncategorized',
     'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Ahmed Abdelhameed',
+    'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',
     'depends': ['base', 'web'],
     'data': [

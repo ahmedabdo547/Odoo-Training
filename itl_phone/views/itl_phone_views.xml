@@ -8,6 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='phone']" position="attributes">
                 <attribute name="widget">custom_itl_phone</attribute>
+                <attribute name="options">{'separate_dial_code':True,'initial_country':'eg'}</attribute>
+
             </xpath>
 
         </field>

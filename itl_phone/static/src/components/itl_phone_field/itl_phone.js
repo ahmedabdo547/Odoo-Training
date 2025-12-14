@@ -14,25 +14,30 @@ export class ItlPhoneField extends PhoneField {
       isValid: false,
     });
     this.notification = useService("notification");
-    console.log("inherited field successfully");
+
     onWillStart(async () => {
-      await Promise.all([
+      const [_, __] = await Promise.all([
         loadCSS(
-          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/css/intlTelInput.css"
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/css/intlTelInput.css",
         ),
         loadJS(
-          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/js/intlTelInput.min.js"
-        ),
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/js/intlTelInput.min.js",
+        )
       ]);
+
     });
+
     onMounted(() => {
       console.log("mounted");
-      this.state.iti = window.intlTelInput(this.inputRef.el, {
-        loadUtils: () =>
-          import(
-            "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/js/utils.js"
-          ),
-      });
+      if (this.inputRef.el) {
+        const options = {
+          separateDialCode: this.props.separateDialCode,
+          initialCountry: this.props.initialCountry || "eg", // جعل مصر الافتراضي إذا لم يحدد
+          utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.6/build/js/utils.js",
+        };
+        this.state.iti = window.intlTelInput(this.inputRef.el, options);
+      }
     });
   }
   validate() {
@@ -51,7 +56,18 @@ export class ItlPhoneField extends PhoneField {
   }
 }
 ItlPhoneField.template = "itl_phone.ItlPhoneField";
+ItlPhoneField.props = {
+  ...PhoneField.props,
+  separateDialCode: { type: Boolean, optional: true },
+  initialCountry: { type: String, optional: true },
+};
 export const itlPhoneField = {
   component: ItlPhoneField,
+  extractProps({ options }) {
+    return {
+      separateDialCode: options.separate_dial_code,
+      initialCountry: options.initial_country,
+    };
+  },
 };
 registry.category("fields").add("custom_itl_phone", itlPhoneField);
