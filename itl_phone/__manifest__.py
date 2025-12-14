@@ -7,7 +7,7 @@
         Detailed description of the module
     ''',
     'category': 'Uncategorized',
-    'author': 'Cybrosys Techno Solutions',
+    'author': 'Ahmed Abdelhameed',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',
