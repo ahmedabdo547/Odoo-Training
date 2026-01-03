@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_owl_subenv_dashboard" model="ir.actions.client">
+        <field name="name">OWL SubEnv Dashboard</field>
+        <field name="tag">owl_use_subenv.dashboard_action</field>
+    </record>
+
+    <menuitem id="menu_owl_subenv_root" name="OWL SubEnv" sequence="10"/>
+    <menuitem id="menu_owl_subenv_dashboard" 
+              name="Dashboard" 
+              parent="menu_owl_subenv_root" 
+              action="action_owl_subenv_dashboard"
+              sequence="1"/>
+</odoo>
