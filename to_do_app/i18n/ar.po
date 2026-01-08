@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* to_do_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-08 23:19+0000\n"
+"PO-Revision-Date: 2026-01-09 12:00+0300\n"
+"Last-Translator: Ahmed Abdelhameed\n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Add"
+msgstr "إضافة"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Add your first task above to get started."
+msgstr "أضف مهمتك الأولى بالأعلى للبدء."
+
+#. module: to_do_app
+#: model_terms:ir.actions.act_window,help:to_do_app.action_task_todo
+msgid "Create New Task."
+msgstr "إنشاء مهمة جديدة."
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: to_do_app
+#: model:ir.ui.menu,name:to_do_app.menu_owl_weather_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Delete this task"
+msgstr "حذف هذه المهمة"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__is_done
+msgid "Is Done?"
+msgstr "منتهية؟"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "My Awesome Tasks"
+msgstr "مهامي الرائعة"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "No results found"
+msgstr "لا توجد نتائج"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "No tasks yet!"
+msgstr "لا توجد مهام بعد!"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Odoo OWL"
+msgstr "أودو OWL"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Powered by"
+msgstr "بدعم من"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Search within tasks..."
+msgstr "بحث في المهام..."
+
+#. module: to_do_app
+#: model_terms:ir.ui.view,arch_db:to_do_app.view_task_todo_tree
+msgid "Task"
+msgstr "المهمة"
+
+#. module: to_do_app
+#: model:ir.model.fields,field_description:to_do_app.field_task_todo__name
+msgid "Task Name"
+msgstr "اسم المهمة"
+
+#. module: to_do_app
+#: model:ir.actions.act_window,name:to_do_app.action_task_todo
+msgid "Task Todo"
+msgstr "مهام To-Do"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Tasks"
+msgstr "المهام"
+
+#. module: to_do_app
+#: model:ir.actions.client,name:to_do_app.action_task_todo_dashboard
+msgid "To DO Dashboard"
+msgstr "لوحة مهام To-Do"
+
+#. module: to_do_app
+#: model:ir.ui.menu,name:to_do_app.task_todo_root_menu
+msgid "Todos"
+msgstr "المهام"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "Try a different search term."
+msgstr "جرب كلمة بحث مختلفة."
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "What needs to be done today?"
+msgstr "ماذا يجب إنجازه اليوم؟"
+
+#. module: to_do_app
+#: model:ir.model,name:to_do_app.model_task_todo
+msgid "task.todo"
+msgstr "مهمة To-Do"
+
+#. module: to_do_app
+#. odoo-javascript
+#: code:addons/to_do_app/static/src/components/task/task.xml:0
+#, python-format
+msgid "🦉 Developed By Ahmed Abdelhameed"
+msgstr "🦉 تم التطوير بواسطة أحمد عبد الحميد"

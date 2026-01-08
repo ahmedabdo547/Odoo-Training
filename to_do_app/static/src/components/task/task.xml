@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="to_do_app.Todo" owl="1">
+        <Layout className="'h-100'" display="{ controlPanel: {} }">
+
+            <div class="p-4 h-100 overflow-auto">
+                <div class="container" style="max-width: 800px;">
+                    <div class="card shadow-sm border-0">
+
+                        <div class="card-header bg-white py-3 border-bottom">
+                             <div class="d-flex justify-content-between align-items-center">
+                                <h3 class="mb-0 text-primary fw-bold">
+                                    <i class="fa fa-check-square-o me-2"/>My Awesome Tasks
+                                </h3>
+                                 <span class="badge bg-primary rounded-pill text-white">
+                                    <t t-esc="state.tasks.length"/> Tasks
+                                </span>
+                             </div>
+                        </div>
+
+                        <div class="card-body bg-light">
+
+                            <div class="input-group mb-4 shadow-sm">
+                                <input type="text" class="form-control border-end-0 py-2"
+                                       placeholder="What needs to be done today?"
+                                       t-model="state.newTaskName"
+                                       t-on-keydown="(ev) => ev.key === 'Enter' and addTask()"
+                                       autofocus="autofocus"/>
+                                <button class="btn btn-primary px-4 fw-bold" t-on-click="addTask">
+                                    <i class="fa fa-plus me-1"/> Add
+                                </button>
+                            </div>
+
+                            <div class="mb-3" t-if="state.tasks.length > 0">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white border-end-0 text-muted">
+                                        <i class="fa fa-search"/>
+                                    </span>
+                                    <input type="text"
+                                           class="form-control border-start-0"
+                                           placeholder="Search within tasks..."
+                                           t-model="state.searchInput"/>
+                                </div>
+                            </div>
+
+                            <div class="list-group shadow-sm">
+                                <t t-foreach="filteredTasks" t-as="task" t-key="task.id">
+                                    <div t-att-class="'list-group-item d-flex justify-content-between align-items-center py-3 ' + (task.is_done ? 'bg-light-subtle' : 'bg-white')">
+
+                                        <div class="d-flex align-items-center gap-3 w-100">
+                                            <div class="form-check m-0">
+                                                <input type="checkbox"
+                                                       class="form-check-input border-2"
+                                                       style="width: 1.3em; height: 1.3em; cursor: pointer;"
+                                                       t-att-checked="task.is_done"
+                                                       t-on-change="() => toggleTask(task)"/>
+                                            </div>
+
+                                            <span t-att-class="'fs-5 text-break ' + (task.is_done ? 'text-decoration-line-through text-muted' : 'fw-500 text-dark')">
+                                                <t t-esc="task.name"/>
+                                            </span>
+                                        </div>
+
+                                        <button class="btn btn-light text-danger btn-sm rounded-circle p-2 ms-2 hover-shadow"
+                                                t-on-click="() => deleteTask(task)"
+                                                title="Delete this task">
+                                            <i class="fa fa-trash"/>
+                                        </button>
+                                    </div>
+                                </t>
+                            </div>
+
+                            <t t-if="filteredTasks.length === 0">
+                                <div class="text-center py-5 text-muted">
+                                    <t t-if="state.tasks.length === 0">
+                                        <i class="fa fa-clipboard-check fa-4x mb-3 text-success opacity-50"/>
+                                        <h5>No tasks yet!</h5>
+                                        <p class="small">Add your first task above to get started.</p>
+                                    </t>
+                                    <t t-else="">
+                                        <i class="fa fa-search fa-4x mb-3 text-secondary opacity-50"/>
+                                        <h5>No results found</h5>
+                                        <p class="small">Try a different search term.</p>
+                                    </t>
+                                </div>
+                            </t>
+
+                        </div>
+
+                        <div class="card-footer bg-light text-muted text-center py-2 small">
+                            Powered by <strong>Odoo OWL</strong> 🦉 Developed By Ahmed Abdelhameed
+                        </div>
+
+                    </div>
+                 </div>
+            </div>
+
+        </Layout>
+    </t>
+
+</templates>
