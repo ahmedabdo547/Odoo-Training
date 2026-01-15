@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="my_owl_widgets.StarFieldWidget" owl="1">
+        <div class="d-flex gap-1">
+        <t t-foreach="stars" t-as="star" t-key="star.id">
+            <i t-on-click="()=>this.handleStarClick(star.id)"
+               class="fa fa-lg cursor-pointer transition"
+               t-att-class="star.isFilled?'fa-star text-warning' : 'fa-star-o text-muted'"></i>
+         </t>
+        </div>
+    </t>
+
+</templates>
