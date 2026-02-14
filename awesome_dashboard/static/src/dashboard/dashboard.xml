@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+        <Layout className="'o_dashboard o_view_controller d-flex flex-column h-100'" display="{ controlPanel: {} }">
+
+           <t t-set-slot="control-panel-create-button">
+
+               <div class="o_control_panel_main_buttons d-flex gap-1 ms-2">
+                    <button class="btn btn-primary" t-on-click="openCustomers">Customers</button>
+                   <button class="btn btn-secondary" t-on-click="openActivity">Leads</button>
+                </div>
+           </t>
+
+            <t t-set-slot="control-panel-navigation-additional">
+    <div class="o_control_panel_actions d-flex align-items-center">
+        <button class="btn btn-outline-secondary me-2" t-on-click="openConfiguration">
+            <i class="fa fa-cog"/>
+        </button>
+
+        <div class="o_cp_searchview d-flex input-group" role="search">
+            </div>
+    </div>
+</t>
+
+            <div class="o_content flex-grow-1 overflow-auto bg-100">
+    <div class="d-flex flex-wrap p-3">
+
+        <DashboardItem size="1" t-if="!state.disabledItems.includes('new_orders')">
+            <div class="text-center">
+                <h6 class="text-uppercase text-muted">New Orders</h6>
+                <p class="display-4 fw-bold text-primary" t-out="statistics.data.nb_new_orders"/>
+            </div>
+        </DashboardItem>
+
+        <DashboardItem size="1" t-if="!state.disabledItems.includes('total_amount')">
+            <div class="text-center">
+                <h6 class="text-uppercase text-muted">Total Amount</h6>
+                <p class="display-4 fw-bold text-success">
+                    <t t-out="statistics.data.total_amount"/>
+                    <span class="fs-6">$</span>
+                </p>
+            </div>
+        </DashboardItem>
+
+        <DashboardItem size="2" t-if="!state.disabledItems.includes('monthly_sales')">
+            <div class="h-100 d-flex flex-column">
+                <h5 class="text-center text-muted text-uppercase mb-3">Monthly Sales</h5>
+                <Chart t-if="statistics.data.orders_by_size" type="'bar'" label="'Monthly Sales'"
+                       data="statistics.data.orders_by_size"/>
+            </div>
+        </DashboardItem>
+
+        <DashboardItem size="2" t-if="!state.disabledItems.includes('tshirt_sizes')">
+            <div class="h-100 d-flex flex-column">
+                <h5 class="text-center text-muted text-uppercase mb-3">T-Shirt Sizes Distribution</h5>
+                <Chart t-if="statistics.data.orders_by_size" type="'pie'" data="statistics.data.orders_by_size"/>
+            </div>
+        </DashboardItem>
+
+        <DashboardItem size="2" t-if="!state.disabledItems.includes('sales_growth')">
+            <div class="h-100 d-flex flex-column">
+                <h5 class="text-center text-muted text-uppercase mb-3">Sales Growth</h5>
+                <Chart t-if="statistics.data.orders_by_size" type="'line'" label="'Daily Sales'"
+                       data="statistics.data.orders_by_size"/>
+            </div>
+        </DashboardItem>
+
+    </div>
+</div>
+        </Layout>
+    </t>
+</templates>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="awesome_dashboard.ConfigurationDialog">
+        <Dialog title="'Customize Dashboard Items'" size="'sm'">
+            <div class="p-3">
+                <t t-foreach="props.items" t-as="item" t-key="item.id">
+                    <div class="form-check mb-2 d-flex align-items-center">
+                        <CheckBox
+                                value="!state.disabledItems.includes(item.id)"
+                                onChange="() => this.toggleItem(item.id)"
+                        />
+                        <span class="ms-2"><t t-out="item.label"/></span>
+                    </div>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="onApply">Apply</button>
+                <button class="btn btn-secondary" t-on-click="props.close">Cancel</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
