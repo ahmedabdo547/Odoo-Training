@@ -1,0 +1,81 @@
+<t t-name="awesome_clicker.ClickerClientAction">
+    <div class="modal-body p-0 d-flex flex-column" style="min-height: 450px;">
+        <Notebook orientation="'vertical'">
+            <t t-set-slot="page_clicks" title="'Clicks'" isVisible="true">
+                <div class="p-4 text-center">
+                    <div class="display-1 fw-bold text-primary mb-2">
+                        <ClickValue value="clicker.clicks"/>
+                    </div>
+                    <p class="text-muted mb-4">Total Clicks Gathered</p>
+
+                    <button class="btn btn-success btn-lg shadow-sm mb-5 px-5" t-on-click="() => clicker.increment(10)">
+                        +10 Clicks 🚀
+                    </button>
+
+                    <div class="row g-3 justify-content-center">
+                        <div t-if="clicker.level gte 1" class="col-md-6">
+                            <div class="card shadow-sm border-0 bg-light p-3">
+                                <h5>ClickBots 🤖</h5>
+                                <p class="h4">
+                                    <t t-esc="clicker.clickBots"/>
+                                </p>
+                                <button class="btn btn-primary w-100" t-on-click="clicker.buyClickBot"
+                                        t-att-disabled="clicker.clicks lt 1000">Buy (1k)
+                                </button>
+                            </div>
+                        </div>
+                        <div t-if="clicker.level gte 2" class="col-md-6">
+                            <div class="card shadow-sm border-primary-subtle border-2 p-3">
+                                <h5 class="text-primary">BigBots 🏗️</h5>
+                                <p class="h4">
+                                    <t t-esc="clicker.bigBots"/>
+                                </p>
+                                <button class="btn btn-warning w-100 fw-bold" t-on-click="clicker.buyBigBot"
+                                        t-att-disabled="clicker.clicks lt 5000">Buy (5k)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+            <t t-set-slot="page_orchard" title="'Orchard'" isVisible="true">
+                <div class="p-4 text-center">
+                    <h4 class="text-success mb-4 border-bottom pb-2">Your Fruit Orchard 🌳</h4>
+                    <div class="row g-3">
+                        <div class="col-6 border-end">
+                            <h6>Pears 🍐</h6>
+                            <div class="d-flex flex-column small">
+                                <span>Trees:
+                                    <b t-esc="clicker.trees.pear"/>
+                                </span>
+                                <span>Fruits:
+                                    <b t-esc="clicker.fruits.pear"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h6>Cherries 🍒</h6>
+                            <div class="d-flex flex-column small">
+                                <span>Trees:
+                                    <b t-esc="clicker.trees.cherry"/>
+                                </span>
+                                <span>Fruits:
+                                    <b t-esc="clicker.fruits.cherry"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <button class="btn btn-success btn-lg px-5 shadow" t-on-click="clicker.buyTree"
+                                t-att-disabled="clicker.clicks lt 1000000">
+                            Plant Random Tree (1M)
+                        </button>
+                    </div>
+                </div>
+            </t>
+        </Notebook>
+    </div>
+
+
+</t>

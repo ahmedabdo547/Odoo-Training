@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="awesome_clicker.MySystrayItem">
+        <Dropdown class="'o_clicker_systray_item'" title="'Clicker Game'">
+            <t t-set-slot="toggler">
+                <div class="d-flex align-items-center gap-1 px-2" style="cursor: pointer;">
+                    <span><ClickValue value="clicker.clicks"/>
+                        <i class="fa fa-mouse-pointer"/></span>
+                    <span>, <t t-esc="clicker.totalTrees"/>
+                        <i class="fa fa-tree"/></span>
+                    <span>, <t t-esc="clicker.totalFruits"/>
+                        <i class="fa fa-apple"/></span>
+                </div>
+            </t>
+
+            <div class="p-2 d-flex flex-column gap-2" style="min-width: 200px;">
+                <DropdownItem onSelected="openClientAction" class="'btn btn-light text-start w-100'">
+                    Open the clicker game
+                </DropdownItem>
+
+                <DropdownItem onSelected="() => clicker.buyClickBot()"
+                              disabled="clicker.clicks lt 1000"
+                              class="'btn btn-light text-start w-100'">
+                    Buy a ClickBot
+                </DropdownItem>
+
+                <div class="px-2 mt-2 d-flex flex-column gap-2">
+                    <div t-if="clicker.trees.pear gt 0">
+                        <t t-esc="clicker.trees.pear"/>x pearTree
+                    </div>
+                    <div t-if="clicker.trees.cherry gt 0">
+                        <t t-esc="clicker.trees.cherry"/>x cherryTree
+                    </div>
+                    <div t-if="clicker.fruits.pear gt 0">
+                        <t t-esc="clicker.fruits.pear"/>x pear
+                    </div>
+                    <div t-if="clicker.fruits.cherry gt 0">
+                        <t t-esc="clicker.fruits.cherry"/>x cherry
+                    </div>
+                </div>
+            </div>
+        </Dropdown>
+    </t>
+</templates>
