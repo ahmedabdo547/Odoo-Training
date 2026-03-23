@@ -1,0 +1,39 @@
+/* التنسيق الأساسي لحبة اللون */
+.o_color_pill {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+
+    /* تأثير عند المرور بالماوس */
+    &:hover {
+        transform: scale(1.15);
+    }
+
+    /* تأثير لما اللون يكون هو المختار (Active) */
+    &.active {
+        border-color: #343a40; /* لون حدود غامق لتمييز الاختيار */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+    }
+}
+
+/* لوب SCSS لتوليد كلاسات الألوان الستة */
+$colors: (
+    1: #f44336, /* أحمر */
+    2: #ff9800, /* برتقالي */
+    3: #ffeb3b, /* أصفر */
+    4: #4caf50, /* أخضر */
+    5: #2196f3, /* أزرق */
+    6: #9c27b0  /* بنفسجي */
+);
+
+@each $num, $color in $colors {
+    .o_color_#{$num} {
+        background-color: $color;
+    }
+}
