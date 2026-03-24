@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_gallery.GalleryRenderer" owl="1">
+        <div class="o_gallery_view p-4">
+            <div class="row">
+                <t t-foreach="props.model.records" t-as="record" t-key="record.id">
+                    <div class="col-md-3 mb-4">
+                       <div class="card shadow-sm h-100 overflow-hidden"
+                            style="cursor: pointer; transition: transform 0.2s;"
+                            t-att-data-tooltip="getTooltip(record)"
+                            t-on-click="() => this.onImageClick(record.id)">
+
+                            <t t-if="record[props.imageField]">
+                                <img t-att-src="getImageUrl(record.id)" class="card-img-top w-100"
+                                     style="height: 200px; object-fit: cover;" alt="Record Image"/>
+                            </t>
+                           <t t-else="">
+                                <div class="bg-light d-flex align-items-center justify-content-center w-100"
+                                     style="height: 200px;">
+                                    <i class="fa fa-picture-o fa-3x text-muted opacity-50"></i>
+                                </div>
+                            </t>
+
+                           <div class="card-body text-center bg-white border-top">
+                                <h5 class="card-title fw-bold m-0">ID: <t t-esc="record.id"/></h5>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>
